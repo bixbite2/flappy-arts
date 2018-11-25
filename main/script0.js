@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pula: function() {
             if (this.y - this.altura > 0) {
                 if (!bloco.morto) {
+                    this.sound.currentTime = 0;
                     this.velocidade = -this.forca;
                     this.sound.play();
                 }
