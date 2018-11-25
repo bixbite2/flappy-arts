@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     chao = {
         y: 550,
-        altura: 100,
+        altura: 50,
         // Parallax
         speed: 9,
         x1: 9,
@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (bloco.estagio == 2) {
                 this.img = document.getElementById('ground1');
             }
+            if (bloco.estagio == 3) {
+                this.img = document.getElementById('ground2');
+            }
+            if (bloco.estagio == 4) {
+                this.img = document.getElementById('ground3');
+            }
             ctx.drawImage(this.img, this.x1, this.y, LARGURA + 1, this.altura);
             ctx.drawImage(this.img, this.x2, this.y, LARGURA + 1, this.altura);
         },
@@ -44,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         x: 50,
         gravidade: .5,
         velocidade: 0,
-        forca: 10,
+        forca: 7,
         morto: false,
         sound: new Audio("sound/sfx_wing.ogg"),
         pula: function() {
@@ -76,6 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             if (bloco.estagio == 2) {
                 this.img = document.getElementById('flappy1');
+            }
+            if (bloco.estagio == 3) {
+                this.img = document.getElementById('flappy2');
+            }
+            if (bloco.estagio == 4) {
+                this.img = document.getElementById('flappy3');
             }
             ctx.drawImage(this.img, this.x, this.y, this.largura, this.altura);
         },
@@ -113,6 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (bloco.estagio == 2) {
                 this.img = document.getElementById('bg1');
             }
+            if (bloco.estagio == 3) {
+                this.img = document.getElementById('bg2');
+            }
+            if (bloco.estagio == 4) {
+                this.img = document.getElementById('bg3');
+            }
             ctx.drawImage(this.img, this.x1, 0, LARGURA, ALTURA);
             ctx.drawImage(this.img, this.x2, 0, LARGURA, ALTURA);
         },
@@ -147,6 +165,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (bloco.estagio == 2) {
                     this.topImg = document.getElementById('toptubo1');
                     this.botImg = document.getElementById('bottubo1');
+                }
+                if (bloco.estagio == 3) {
+                    this.topImg = document.getElementById('toptubo2');
+                    this.botImg = document.getElementById('bottubo2');
+                }
+                if (bloco.estagio == 4) {
+                    this.topImg = document.getElementById('toptubo3');
+                    this.botImg = document.getElementById('bottubo3');
                 }
                 ctx.drawImage(this.topImg, this.x, -tubo.altura + this.gapPos, tubo.largura, tubo.altura);
                 ctx.drawImage(this.botImg, this.x, this.gapPos + this.permaGap, tubo.largura, tubo.altura);
@@ -195,9 +221,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function atualiza() {
 
-        if (bloco.pontuacao == 2) {
+        if (bloco.pontuacao == 10) {
             bloco.estagio = 2;
+            tubo.gap = 250;
+        }
+        if (bloco.pontuacao == 20) {
+            bloco.estagio = 3;
             tubo.gap = 200;
+        }
+        if (bloco.pontuacao == 30) {
+            bloco.estagio = 4;
+            tubo.gap = 150;
         }
 
         frames++;
