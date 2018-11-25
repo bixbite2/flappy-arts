@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
         largura: 49,
         y: 10,
         x: 50,
-        gravidade: .4,
+        gravidade: .5,
         velocidade: 0,
-        forca: 7,
+        forca: 10,
         morto: false,
         sound: new Audio("sound/sfx_wing.ogg"),
         pula: function() {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     tubo = {
         // Caracteristicas gerais do tubo
-        largura: 66,
+        largura: 100,
         altura: ALTURA - 300,
         gap: 300,
         freq: 100,
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
             t.desenha();
         }
         chao.desenha();
-        ctx.font = "30px Consolas";
+        ctx.font = "50px Consolas";
         ctx.fillText(bloco.pontuacao, 400, 50);
     }
 
