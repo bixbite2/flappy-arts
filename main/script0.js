@@ -221,15 +221,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function atualiza() {
 
-        if (bloco.pontuacao == 10) {
+        if (bloco.pontuacao == 1) {
             bloco.estagio = 2;
             tubo.gap = 250;
         }
-        if (bloco.pontuacao == 20) {
+        if (bloco.pontuacao == 2) {
             bloco.estagio = 3;
             tubo.gap = 200;
         }
-        if (bloco.pontuacao == 30) {
+        if (bloco.pontuacao == 3) {
             bloco.estagio = 4;
             tubo.gap = 150;
         }
