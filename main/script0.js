@@ -219,20 +219,31 @@ document.addEventListener('DOMContentLoaded', function() {
         window.requestAnimationFrame(roda);
     }
 
+    marcador = bloco.pontuacao;
+
     function atualiza() {
 
-        if (bloco.pontuacao == 1) {
+        if (marcador == 0) {
+            marcador = bloco.pontuacao;
+        }
+
+        if (bloco.pontuacao == marcador + 1) {
             bloco.estagio = 2;
             tubo.gap = 250;
         }
-        if (bloco.pontuacao == 2) {
+        if (bloco.pontuacao == marcador + 2) {
             bloco.estagio = 3;
             tubo.gap = 200;
         }
-        if (bloco.pontuacao == 3) {
+        if (bloco.pontuacao == marcador + 3) {
             bloco.estagio = 4;
             tubo.gap = 150;
         }
+        if (bloco.pontuacao == marcador + 4) {
+            bloco.estagio = 1;
+            marcador = 0;
+        }
+
 
         frames++;
 
