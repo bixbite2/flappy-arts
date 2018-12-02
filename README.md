@@ -1,3 +1,3 @@
 # flappy-pimba
 
-Link do WebApp: https://inspiring-yalow-4cc07b.netlify.com/
+Link do WebApp: https://suspicious-ritchie-87da11.netlify.com/game.html
